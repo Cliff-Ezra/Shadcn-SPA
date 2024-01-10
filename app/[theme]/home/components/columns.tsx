@@ -89,7 +89,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "microservice",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="microservice" />
+      <DataTableColumnHeader column={column} title="Microservice" />
     ),
     cell: ({ row }) => {
       const microservice = microservices.find(
