@@ -16,11 +16,6 @@ const examples = [
     href: "/home",
     code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/dashboard",
   },
-  {
-    name: "Dashboard",
-    href: "/dashboard",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/dashboard",
-  },
   // {
   //   name: "Cards",
   //   href: "/cards",
