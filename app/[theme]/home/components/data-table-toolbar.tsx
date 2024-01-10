@@ -6,8 +6,8 @@ import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-import { DataTableFacetedFilter } from "../../tasks/components/data-table-faceted-filter"
-import { DataTableViewOptions } from "../../tasks/components/data-table-view-options"
+import { DataTableFacetedFilter } from "./data-table-faceted-filter"
+import { DataTableViewOptions } from "./data-table-view-options"
 import { microservices, statuses } from "../data/data"
 
 interface DataTableToolbarProps<TData> {
