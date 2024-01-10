@@ -1,10 +1,13 @@
 import {
-  ArrowUpCircle,
   ArrowDownCircle,
   ArrowRightCircle,
+  ArrowUpCircle,
+  Bug,
   CheckCircle2,
   Circle,
   HelpCircle,
+  Info,
+  ShieldAlert,
   XCircle,
 } from "lucide-react"
 
@@ -25,28 +28,23 @@ export const labels = [
 
 export const statuses = [
   {
-    value: "backlog",
-    label: "Backlog",
-    icon: HelpCircle,
+    value: "info",
+    label: "INFO",
+    icon: Info,
   },
   {
-    value: "todo",
-    label: "Todo",
-    icon: Circle,
+    value: "debug",
+    label: "DEBUG",
+    icon: Bug,
   },
   {
-    value: "in progress",
-    label: "In Progress",
-    icon: ArrowUpCircle,
+    value: "error",
+    label: "ERROR",
+    icon: ShieldAlert,
   },
   {
-    value: "done",
-    label: "Done",
-    icon: CheckCircle2,
-  },
-  {
-    value: "canceled",
-    label: "Canceled",
+    value: "fatal",
+    label: "FATAL",
     icon: XCircle,
   },
 ]
