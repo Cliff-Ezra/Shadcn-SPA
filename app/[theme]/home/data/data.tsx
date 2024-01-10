@@ -1,13 +1,10 @@
 import {
-  ArrowDownCircle,
-  ArrowRightCircle,
-  ArrowUpCircle,
+  BellRing,
   Bug,
-  CheckCircle2,
-  Circle,
-  HelpCircle,
+  CircleDollarSign,
   Info,
   ShieldAlert,
+  Truck,
   XCircle,
 } from "lucide-react"
 
@@ -49,20 +46,20 @@ export const statuses = [
   },
 ]
 
-export const priorities = [
+export const microservices = [
   {
-    label: "Low",
-    value: "low",
-    icon: ArrowDownCircle,
+    label: "Payments",
+    value: "payments",
+    icon: CircleDollarSign,
   },
   {
-    label: "Medium",
-    value: "medium",
-    icon: ArrowRightCircle,
+    label: "Notifications",
+    value: "notifications",
+    icon: BellRing,
   },
   {
-    label: "High",
-    value: "high",
-    icon: ArrowUpCircle,
+    label: "Orders",
+    value: "orders",
+    icon: Truck,
   },
 ]

@@ -7,7 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 import { DataTableColumnHeader } from "../../tasks/components/data-table-column-header"
 import { DataTableRowActions } from "../../tasks/components/data-table-row-actions"
-import { labels, priorities, statuses } from "../data/data"
+import { labels, microservices, statuses } from "../data/data"
 import { Task } from "../data/schema"
 
 export const columns: ColumnDef<Task>[] = [
@@ -87,25 +87,25 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: "priority",
+    accessorKey: "microservice",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Priority" />
+      <DataTableColumnHeader column={column} title="microservice" />
     ),
     cell: ({ row }) => {
-      const priority = priorities.find(
-        (priority) => priority.value === row.getValue("priority")
+      const microservice = microservices.find(
+        (microservice) => microservice.value === row.getValue("microservice")
       )
 
-      if (!priority) {
+      if (!microservice) {
         return null
       }
 
       return (
         <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          {microservice.icon && (
+            <microservice.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )}
-          <span>{priority.label}</span>
+          <span>{microservice.label}</span>
         </div>
       )
     },

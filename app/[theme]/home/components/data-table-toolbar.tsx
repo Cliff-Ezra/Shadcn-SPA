@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 
 import { DataTableFacetedFilter } from "../../tasks/components/data-table-faceted-filter"
 import { DataTableViewOptions } from "../../tasks/components/data-table-view-options"
-import { priorities, statuses } from "../data/data"
+import { microservices, statuses } from "../data/data"
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>
@@ -39,11 +39,11 @@ export function DataTableToolbar<TData>({
             options={statuses}
           />
         )}
-        {table.getColumn("priority") && (
+        {table.getColumn("microservice") && (
           <DataTableFacetedFilter
-            column={table.getColumn("priority")}
-            title="Priority"
-            options={priorities}
+            column={table.getColumn("microservice")}
+            title="Microservice"
+            options={microservices}
           />
         )}
         {isFiltered && (
