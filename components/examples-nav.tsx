@@ -12,7 +12,7 @@ import { Badge } from "./ui/badge"
 
 const examples = [
   {
-    name: "Home",
+    // name: "Home",
     href: "/home",
     code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/dashboard",
   },
@@ -21,12 +21,12 @@ const examples = [
   //   href: "/cards",
   //   code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/cards",
   // },
-  {
-    name: "Tasks",
-    href: "/tasks",
-    label: "New",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/tasks",
-  },
+  // {
+  //   name: "Tasks",
+  //   href: "/tasks",
+  //   label: "New",
+  //   code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/tasks",
+  // },
   // {
   //   name: "Playground",
   //   href: "/playground",
