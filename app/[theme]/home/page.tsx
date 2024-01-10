@@ -1,70 +1,166 @@
-import * as React from "react"
 import { Metadata } from "next"
-import Link from "next/link"
-import { Star } from "lucide-react"
+import Image from "next/image"
+import { Activity, CreditCard, DollarSign, Download, Users } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+import { CalendarDateRangePicker } from "./components/date-range-picker"
+import { MainNav } from "./components/main-nav"
+import { Overview } from "./components/overview"
+import { RecentSales } from "./components/recent-sales"
+import { Search } from "./components/search"
+import TeamSwitcher from "./components/team-switcher"
+import { UserNav } from "./components/user-nav"
 
 export const metadata: Metadata = {
-  title: "Home page",
-  description: "Beautifully designed themes built for shadcn/ui",
+  title: "Dashboard",
+  description: "Example dashboard app using the components.",
 }
 
 export default function HomePage() {
   return (
-    <section className="container max-w-[80%] p-2 md:pb-10">
-      <h1 className="scroll-m-20 text-xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
-        <p className="center py-4 text-center text-3xl md:py-8 md:text-8xl">
-          Why so bland?
-        </p>
-        <span className="inline-block bg-gradient-to-r from-ring to-foreground bg-clip-text py-2 text-transparent md:p-2">
-          Color the web with beautifully designed themes
-        </span>
-      </h1>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        Inspired by{" "}
-        <Link
-          href="https://twitter.com/peduarte"
-          target="_blank"
-          className="font-medium text-primary underline underline-offset-4"
-        >
-          @peduarte
-        </Link>{" "}
-        work on{" "}
-        <Link
-          href="https://themes.ray.so"
-          target="_blank"
-          className="font-medium text-primary underline underline-offset-4"
-        >
-          Raycast Theme Explorer
-        </Link>
-        , a collection of themes designed to complement{" "}
-        <Link
-          href="https://ui.shadcn.com/"
-          target="_blank"
-          className="font-medium text-primary underline underline-offset-4"
-        >
-          shadcn/ui
-        </Link>{" "}
-        beautifully crafted components.
-      </p>
-      <h2 className="mt-6 scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight transition-colors first:mt-0 md:mt-10 md:text-3xl">
-        Contributions are welcome, upload new themes or help us improve
-      </h2>
-      <p className="mt-4 pb-4 leading-7 md:mt-10">
-        If you enjoy using this tool, please consider
-        <Link
-          href="https://github.com/luisFilipePT/shadcn-ui-theme-explorer"
-          target="_blank"
-          className="px-2"
-        >
-          <Star
-            className="mb-1 inline text-amber-300"
-            size={20}
-            fill="yellow"
-          />
-        </Link>
-        the repo and follow the authors to hear them rumbling on Open Source and
-        more.
-      </p>
-    </section>
+    <>
+      <div className="md:hidden">
+        <Image
+          src="/examples/dashboard-light.png"
+          width={1280}
+          height={866}
+          alt="Dashboard"
+          className="block dark:hidden"
+        />
+        <Image
+          src="/examples/dashboard-dark.png"
+          width={1280}
+          height={866}
+          alt="Dashboard"
+          className="hidden dark:block"
+        />
+      </div>
+      <div className="hidden flex-col md:flex">
+        <div className="border-b">
+          <div className="flex h-16 items-center px-4">
+            <TeamSwitcher />
+            <MainNav className="mx-6" />
+            <div className="ml-auto flex items-center space-x-4">
+              <Search />
+              <UserNav />
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 space-y-4 p-8 pt-6">
+          <div className="flex items-center justify-between space-y-2">
+            <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+            <div className="flex items-center space-x-2">
+              <CalendarDateRangePicker />
+              <Button size="sm">
+                <Download className="mr-2 h-4 w-4" />
+                Download
+              </Button>
+            </div>
+          </div>
+          <Tabs defaultValue="overview" className="space-y-4">
+            <TabsList>
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="analytics" disabled>
+                Analytics
+              </TabsTrigger>
+              <TabsTrigger value="reports" disabled>
+                Reports
+              </TabsTrigger>
+              <TabsTrigger value="notifications" disabled>
+                Notifications
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview" className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium">
+                      Total Revenue
+                    </CardTitle>
+                    <DollarSign className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl font-bold">$45,231.89</div>
+                    <p className="text-xs text-muted-foreground">
+                      +20.1% from last month
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium">
+                      Subscriptions
+                    </CardTitle>
+                    <Users className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl font-bold">+2350</div>
+                    <p className="text-xs text-muted-foreground">
+                      +180.1% from last month
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium">Sales</CardTitle>
+                    <CreditCard className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl font-bold">+12,234</div>
+                    <p className="text-xs text-muted-foreground">
+                      +19% from last month
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium">
+                      Active Now
+                    </CardTitle>
+                    <Activity className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl font-bold">+573</div>
+                    <p className="text-xs text-muted-foreground">
+                      +201 since last hour
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+                <Card className="col-span-4">
+                  <CardHeader>
+                    <CardTitle>Overview</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pl-2">
+                    <Overview />
+                  </CardContent>
+                </Card>
+                <Card className="col-span-3">
+                  <CardHeader>
+                    <CardTitle>Recent Sales</CardTitle>
+                    <CardDescription>
+                      You made 265 sales this month.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <RecentSales />
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+    </>
   )
 }

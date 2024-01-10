@@ -11,11 +11,11 @@ import { useTheme } from "./shadcn-theme-provider"
 import { Badge } from "./ui/badge"
 
 const examples = [
-  // {
-  //   name: "Home",
-  //   href: "/home",
-  //   code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/dashboard",
-  // },
+  {
+    name: "Home",
+    href: "/home",
+    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/examples/dashboard",
+  },
   {
     name: "Dashboard",
     href: "/dashboard",
