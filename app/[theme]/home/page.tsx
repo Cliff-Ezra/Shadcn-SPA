@@ -1,12 +1,10 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { Activity, CreditCard, DollarSign, Download, Users } from "lucide-react"
+import { Activity, Bug, Timer, Download, Users } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -22,7 +20,18 @@ import { UserNav } from "./components/user-nav"
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: "Example dashboard app using the components.",
+  description: "Dashboard & log tracker built using Tanstack Table.",
+}
+
+// Simulate a database read for tasks.
+async function getTasks() {
+  const data = await fs.readFile(
+    path.join(process.cwd(), "app/[theme]/tasks/data/tasks.json")
+  )
+
+  const tasks = JSON.parse(data.toString())
+
+  return z.array(taskSchema).parse(tasks)
 }
 
 export default function HomePage() {
@@ -97,7 +106,7 @@ export default function HomePage() {
                     <CardTitle className="text-sm font-medium">
                       Number of Fatal Errors
                     </CardTitle>
-                    <Activity className="h-4 w-4 text-muted-foreground" />
+                    <Bug className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold pt-2.5">30</div>
@@ -108,13 +117,14 @@ export default function HomePage() {
                     <CardTitle className="text-sm font-medium">
                       Average Response Time
                     </CardTitle>
-                    <Activity className="h-4 w-4 text-muted-foreground" />
+                    <Timer className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold pt-2.5">2.4 ms</div>
                   </CardContent>
                 </Card>
               </div>
+
               {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                 <Card className="col-span-4">
                   <CardHeader>
