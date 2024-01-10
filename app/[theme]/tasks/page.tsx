@@ -4,10 +4,10 @@ import { Metadata } from "next"
 import Image from "next/image"
 import { z } from "zod"
 
-import { columns } from "./components/columns"
-import { DataTable } from "./components/data-table"
+import { columns } from "../home/components/columns"
+import { DataTable } from "../home/components/data-table"
+import { taskSchema } from "../home/data/schema"
 import { UserNav } from "./components/user-nav"
-import { taskSchema } from "./data/schema"
 
 export const metadata: Metadata = {
   title: "Tasks",
