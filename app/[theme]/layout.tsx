@@ -38,34 +38,6 @@ export async function generateMetadata(params: {
       { media: "(prefers-color-scheme: light)", color: "white" },
       { media: "(prefers-color-scheme: dark)", color: "black" },
     ],
-    twitter: {
-      site: "https://shadcn-ui-theme-explorer.vercel.app/",
-      title: siteConfig.name,
-      description: siteConfig.description,
-      creator: "@_luisFilipePT",
-      images: [
-        {
-          url: "https://shadcn-ui-theme-explorer.vercel.app/og.jpg",
-          width: 1200,
-          height: 628,
-        },
-      ],
-    },
-    openGraph: {
-      title: siteConfig.name,
-      description: siteConfig.description,
-      authors: ["Luis Filipe", "Joana Santos"],
-      url: "https://shadcn-ui-theme-explorer.vercel.app/",
-      locale: "en_US",
-      siteName: "shadcn-ui-theme-explorer.vercel.app",
-      images: [
-        {
-          url: "https://shadcn-ui-theme-explorer.vercel.app/og.jpg",
-          width: 1200,
-          height: 628,
-        },
-      ],
-    },
     robots: {
       index: true,
       follow: true,
