@@ -30,7 +30,7 @@ export async function generateMetadata(params: {
 
   return {
     title: {
-      default: `${currentTheme.name} Theme`,
+      default: `Log Management`,
       template: `%s - ${siteConfig.name}`,
     },
     description: currentTheme.description || siteConfig.description,
