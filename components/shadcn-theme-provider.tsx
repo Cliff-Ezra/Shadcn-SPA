@@ -50,7 +50,7 @@ function getPreviousThemeName(currentThemeIndex: number) {
 
 export function ShadcnThemeProvider({ children }: ShadcnThemeProviderProps) {
   const router = useRouter()
-  const [nextThemeName, setNextThemeName] = useState(themes[1].name)
+  const [nextThemeName, setNextThemeName] = useState(themes[0]?.name)
   const [previousThemeName, setPreviousThemeName] = useState(
     themes[themes.length - 1].name
   )

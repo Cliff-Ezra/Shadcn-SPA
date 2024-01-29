@@ -1,10 +1,3 @@
-@import 'themes/nord.css';
-@import 'themes/gold.css';
-@import 'themes/nature.css';
-@import 'themes/netflix.css';
-@import 'themes/laracon.css';
-@import 'themes/dracula.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
